@@ -12,11 +12,11 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://polyxios.org/stable/contributing.html" />
 <meta property="og:site_name" content="polyxios" />
-<meta property="og:description" content="Commit message convention: Every commit subject line must start with one of these prefixes followed by a space:,, Prefix, Meaning,,, BF:, Bug fix,, RF:, Refactoring,, NF:, New feature,, BW:, Addres..." />
+<meta property="og:description" content="Issue first: Every change starts as an issue assigned to the person who will write it, so the problem and the proposed fix are agreed on before code is written: Find or open an issue describing the..." />
 <meta property="og:image:width" content="1146" />
 <meta property="og:image:height" content="600" />
-<meta property="og:image" content="https://polyxios.org/stable/_images/social_previews/summary_contributing_e7e45a27.png" />
-<meta property="og:image:alt" content="Commit message convention: Every commit subject line must start with one of these prefixes followed by a space:,, Prefix, Meaning,,, BF:, Bug fix,, RF:, Refactoring,, NF:, New feature,, BW:, Addres..." />
+<meta property="og:image" content="https://polyxios.org/stable/_images/social_previews/summary_contributing_834f221b.png" />
+<meta property="og:image:alt" content="Issue first: Every change starts as an issue assigned to the person who will write it, so the problem and the proposed fix are agreed on before code is written: Find or open an issue describing the..." />
 <meta name="twitter:card" content="summary_large_image" />
 
     <meta name="robots" content="noindex, follow" />
@@ -44,7 +44,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/css/retro.css?v=afa9f044" />
+    <link rel="stylesheet" type="text/css" href="_static/css/retro.css?v=fb81dddc" />
   
   <!-- So that users can add custom icons -->
   <script defer src="_static/scripts/fontawesome.js?digest=90905a2f556bf617f1a9"></script>
@@ -52,7 +52,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=90905a2f556bf617f1a9" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=90905a2f556bf617f1a9" />
 
-    <script src="_static/documentation_options.js?v=6d543d0c"></script>
+    <script src="_static/documentation_options.js?v=83d82e34"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -71,11 +71,11 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Development Guide" href="development.html" />
-    <link rel="prev" title="polyxios.helper" href="api/generated/polyxios.helper.html" />
+    <link rel="prev" title="polyxios.write_scene" href="api/generated/polyxios.write_scene.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.5" />
-    <meta name="docbuild:last-update" content="2026-09-15"/>
+  <meta name="docsearch:version" content="0.6" />
+    <meta name="docbuild:last-update" content="2026-11-05"/>
   
     
     <script src="_static/searchtools.js"></script>
@@ -429,6 +429,9 @@
 <li class="toctree-l2"><a class="reference internal" href="formats/obj.html">Wavefront OBJ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/ply.html">Stanford PLY</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/stl.html">STL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/3mf.html">3MF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/amf.html">AMF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/dxf.html">DXF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/off.html">OFF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/abaqus.html">Abaqus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/avs.html">AVS-UCD</a></li>
@@ -436,6 +439,8 @@
 <li class="toctree-l2"><a class="reference internal" href="formats/medit.html">Medit ASCII</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/dolfin.html">DOLFIN / FEniCS XML</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/flac3d.html">FLAC3D</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/gltf.html">glTF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/collada.html">COLLADA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/gmsh.html">Gmsh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/nastran.html">Nastran</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/tecplot.html">Tecplot ASCII</a></li>
@@ -445,19 +450,34 @@
 <li class="toctree-l2"><a class="reference internal" href="formats/vtu.html">VTK UnstructuredGrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/vts.html">VTK StructuredGrid</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/vti.html">VTK ImageData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/vtkhdf.html">VTKHDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/pvd.html">PVD (ParaView collection)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/mfem.html">MFEM mesh</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/netgen.html">Netgen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/ugrid.html">UGRID (AFLR)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/splat.html">Gaussian splat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/spz.html">SPZ (compressed Gaussian splats)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/pcd.html">PCD (Point Cloud Library)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/las.html">LAS / LAZ (ASPRS LiDAR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/xyz.html">ASCII point clouds: XYZ, PTS, PTX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/mdpa.html">Kratos MDPA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/permas.html">PERMAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/unv.html">I-DEAS universal file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="formats/fluent.html">ANSYS Fluent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/svg.html">SVG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/xdmf.html">XDMF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/med.html">MED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/cgns.html">CGNS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/h5m.html">H5M (MOAB)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/hmf.html">HMF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formats/exodus.html">Exodus II</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="lazy_loading.html">lazy_loading.rst</a></li>
 <li class="toctree-l1"><a class="reference internal" href="transforms.html">transforms.rst</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">cli.rst</a></li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">plugins.rst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="napari.html">napari.rst</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="api/index.html">api/</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="api/generated/polyxios.html">polyxios</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/polyxios.version.html">polyxios.version</a></li>
@@ -468,9 +488,20 @@
 <li class="toctree-l3"><a class="reference internal" href="api/generated/polyxios.fetcher.html">polyxios.fetcher</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/polyxios.cli.html">polyxios.cli</a></li>
 <li class="toctree-l3"><a class="reference internal" href="api/generated/polyxios.helper.html">polyxios.helper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/generated/polyxios.napari.html">polyxios.napari</a></li>
 </ul>
 </details></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.SceneData.html">polyxios.SceneData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.SceneNode.html">polyxios.SceneNode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.SceneMaterial.html">polyxios.SceneMaterial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.SceneTexture.html">polyxios.SceneTexture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.SceneImage.html">polyxios.SceneImage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.read_scene.html">polyxios.read_scene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.write_scene.html">polyxios.write_scene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.transforms.html">polyxios.transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.helper.html">polyxios.helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.napari.html">polyxios.napari</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.fetcher.html">polyxios.fetcher</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.validate.html">polyxios.validate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api/generated/polyxios.exceptions.html">polyxios.exceptions</a></li>
 </ul>
@@ -538,6 +569,42 @@
                   
   <section id="contributing">
 <h1>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">#</a></h1>
+<section id="issue-first">
+<h2>Issue first<a class="headerlink" href="#issue-first" title="Link to this heading">#</a></h2>
+<p>Every change starts as an <a class="reference external" href="https://github.com/fury-gl/polyxios/issues">issue</a>
+assigned to the person who will write it, so the problem and the proposed
+fix are agreed on before code is written:</p>
+<ol class="arabic simple">
+<li><p>Find or open an issue describing the change. Ideas can start as a
+<a class="reference external" href="https://github.com/fury-gl/polyxios/discussions">discussion</a>; once
+agreed, a maintainer opens an issue from it.</p></li>
+<li><p>Comment on the issue to ask to work on it. A maintainer assigns it to you.</p></li>
+<li><p>Reference it in the pull request description (<code class="docutils literal notranslate"><span class="pre">Closes</span> <span class="pre">#123</span></code>).</p></li>
+</ol>
+<p>The <code class="docutils literal notranslate"><span class="pre">PR</span> <span class="pre">Policy</span></code> workflow enforces this for every author who is neither a
+member of the <code class="docutils literal notranslate"><span class="pre">fury-gl</span></code> organisation nor has write access to the
+repository, outside collaborators with read or triage access included. A
+pull request that references no open issue assigned to
+its author is labelled <code class="docutils literal notranslate"><span class="pre">needs-issue</span></code>, closed, and gets a failing
+<code class="docutils literal notranslate"><span class="pre">pr-policy</span></code> status. It reopens on its own once it references such an issue,
+whether the description is edited or the author is assigned, unless someone
+else closed it since. GitHub starts no CI for a reopen made by a workflow, so
+if you pushed while the pull request was closed, push again to run the checks.
+Unassigning the author closes the pull request again. A maintainer can waive
+the check for one pull request by reopening it after the policy closed it.
+First-time contributors also get a welcome comment that summarises these
+rules.</p>
+<p>The rule holds for returning contributors too. Regular contributors can
+instead join the polyxios community: open a discussion in the
+<a class="reference external" href="https://github.com/fury-gl/polyxios/discussions/categories/community-membership">Community membership</a>
+category with links to past contributions. Once a maintainer adds the login
+to <code class="docutils literal notranslate"><span class="pre">.github/community-members.txt</span></code>, that author’s pull requests skip the
+issue-first check. Membership grants no write access to the repository.</p>
+<p>AI-assisted contributions are welcome under the same terms as any other:
+the author is responsible for every line, has run the code, and answers
+review questions personally. Pull requests that read as unreviewed
+generated output are closed.</p>
+</section>
 <section id="commit-message-convention">
 <h2>Commit message convention<a class="headerlink" href="#commit-message-convention" title="Link to this heading">#</a></h2>
 <p>Every commit subject line must start with one of these prefixes followed by
@@ -645,12 +712,12 @@ drop the bot’s <code class="docutils literal notranslate"><span class="pre">Co
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="api/generated/polyxios.helper.html"
+       href="api/generated/polyxios.write_scene.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">polyxios.helper</p>
+        <p class="prev-next-title">polyxios.write_scene</p>
       </div>
     </a>
     <a class="right-next"
@@ -681,6 +748,7 @@ drop the bot’s <code class="docutils literal notranslate"><span class="pre">Co
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#issue-first">Issue first</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-message-convention">Commit message convention</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bot-authored-commits">Bot-authored commits</a></li>
 </ul>
@@ -740,7 +808,7 @@ drop the bot’s <code class="docutils literal notranslate"><span class="pre">Co
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="last-updated">
-  Last updated on 2026-09-15.
+  Last updated on 2026-11-05.
   <br/>
 </p></div>
       

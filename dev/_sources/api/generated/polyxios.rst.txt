@@ -9,8 +9,10 @@
    .. autosummary::
    
       read
+      read_scene
       supported_extensions
       write
+      write_scene
    
 .. rubric:: Modules
 
@@ -26,3 +28,4 @@
    fetcher
    cli
    helper
+   napari
